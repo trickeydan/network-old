@@ -1,0 +1,46 @@
+---
+# This role contains common plays that will run on all Debian 9 nodes.
+
+# Core Packages
+
+- name: Update APT Cache
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install packages from APT
+  apt:
+    name: ["vim"]
+    state: present
+  become: yes
+
+# System Config
+
+- name: SSHd Configuration
+  copy:
+    src: sshd_config
+    dest: /etc/ssh/sshd_config
+  become: yes
+  notify:
+    - restart sshd
+
+- name: Add User Account
+  user:
+    name: dan
+  become: yes
+
+- name: Passwordless Sudo
+  lineinfile:
+    path: /etc/sudoers
+    state: present
+    regexp: '^%sudo'
+    line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+    validate: 'visudo -cf %s'
+  become: yes
+
+- name: No root password
+  user:
+    name: root
+    password: "!"
+  become: yes
+    
