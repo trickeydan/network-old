@@ -12,4 +12,5 @@ ansible = "*"
 python_version = "3.7"
 
 [scripts]
-"deploy" = "ansible-playbook -i hosts network.yml --ask-become-pass"
+"config" = "ansible-playbook -i hosts config.yml"
+"config-pass" = "ansible-playbook -i hosts config.yml --ask-become-pass"

@@ -10,7 +10,7 @@
 
 - name: Install packages from APT
   apt:
-    name: ["vim"]
+    name: ["vim", "mtr"]
     state: present
   become: yes
 
