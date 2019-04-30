@@ -2,3 +2,7 @@
 
   roles:
    - deb9
+
+- hosts: groot
+  roles:
+   - groot

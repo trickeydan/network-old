@@ -1,0 +1,9 @@
+# Tasks that we only run on groot.
+
+- name: Setup Groot Network Interfaces.
+  copy:
+    src: interfaces
+    dest: /etc/network/interfaces
+  notify:
+    - restart networking
+  become: yes
