@@ -1,12 +1,10 @@
-source /etc/network/interfaces.d/*
-
 # Loopback Interface
 auto lo
 iface lo inet loopback
 
 # WAN (Virgin Media)
-auto enp2s0
-iface enp2s0 inet static
+auto wan0
+iface wan0 inet static
     address 192.168.0.253/24
     gateway 192.168.0.1
 
@@ -21,9 +19,9 @@ iface he0 inet6 v4tunnel
         gateway 2001:470:1f08:21f::1
 
 # LAN 
-auto enp1s0
-iface enp1s0 inet static
+auto lan0
+iface lan0 inet static
     address 10.101.0.1/24
 
-iface enp1s0 inet6 static
+iface lan0 inet6 static
     address 2001:470:694c::1/64

@@ -1,5 +1,13 @@
 # Tasks that we only run on groot.
 
+- name: Set Groot interface names.
+  copy:
+    src: udev-interfaces
+    dest: /etc/udev/rules.d/70-persistent-net.rules
+  notify:
+    - reboot
+  become: yes
+
 - name: Setup Groot Network Interfaces.
   copy:
     src: interfaces

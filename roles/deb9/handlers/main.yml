@@ -3,3 +3,7 @@
     state: restarted
     name: sshd
   become: yes
+
+- name: reboot
+  reboot:
+  become: yes

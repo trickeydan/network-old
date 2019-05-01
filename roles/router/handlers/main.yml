@@ -1,3 +1,9 @@
 - name: reload firewall
   shell: nft -f /etc/nftables.conf
   become: yes
+
+- name: restart networking
+  systemd:
+    state: restarted
+    name: networking
+  become: yes

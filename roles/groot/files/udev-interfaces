@@ -1,0 +1,2 @@
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="74:d4:35:e3:79:40",ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="lan0"
+SUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="7c:8b:ca:01:a4:b7",ATTR{dev_id}=="0x0", ATTR{type}=="1", NAME="wan0"
