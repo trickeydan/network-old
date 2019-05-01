@@ -1,0 +1,6 @@
+# Tasks for Debian Based Routers
+
+- name: Install packages from APT
+  apt:
+    name: ["nftables"]
+  become: yes
