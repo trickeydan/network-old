@@ -17,6 +17,7 @@ iface he0 inet6 v4tunnel
         local 192.168.0.253
         ttl 255
         gateway 2001:470:1f08:21f::1
+        up ip a change 2001:470:1f08:21f::2 dev he0 preferred_lft 0
 
 # LAN 
 auto lan0
