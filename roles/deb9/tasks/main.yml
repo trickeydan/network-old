@@ -10,7 +10,7 @@
 
 - name: Install packages from APT
   apt:
-    name: ["dnsutils", "mtr", "vim"]
+    name: ["curl", "dnsutils", "mtr", "vim"]
     state: present
   become: yes
 
